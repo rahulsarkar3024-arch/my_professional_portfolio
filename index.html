@@ -44,7 +44,7 @@ nav {
   border-bottom: 1px solid var(--rule);
 }
 .nav-logo {
-  font-family: var(--cool); font-size: 13px; font-weight: 700;
+  font-family: var(--cool); font-size: 15px; font-weight: 700;
   color: var(--ink); text-decoration: none; letter-spacing: 0.06em;
   text-transform: uppercase;
   display: flex; align-items: center; gap: 0.6rem;
@@ -55,7 +55,7 @@ nav {
 }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
-  font-size: 11px; font-weight: 400; color: var(--ink2);
+  font-size: 13px; font-weight: 400; color: var(--ink2);
   text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase;
   transition: color 0.25s;
 }
@@ -257,7 +257,7 @@ section { padding: 8rem 5vw; }
   align-items: end; margin-bottom: 5rem;
 }
 .portfolio-header-right {
-  font-size: 14px; font-weight: 300; color: var(--ink2); line-height: 1.9; max-width: 380px;
+  font-size: 16px; font-weight: 300; color: var(--ink2); line-height: 1.9; max-width: 380px;
 }
 
 /* ── WORK LIST ROWS ── */
@@ -278,7 +278,7 @@ section { padding: 8rem 5vw; }
 
 .work-row-left { display: flex; align-items: flex-start; gap: 2rem; flex: 1; }
 .work-num {
-  font-size: 10px; letter-spacing: 0.14em; color: var(--ink3);
+  font-size: 20px; font-weight: 700; letter-spacing: 0.14em; color: var(--ink3);
   padding-top: 0.25rem; flex-shrink: 0; width: 1.5rem;
 }
 .work-info { display: flex; flex-direction: column; gap: 0.35rem; }
@@ -363,11 +363,11 @@ section { padding: 8rem 5vw; }
 .contact-row:first-child { border-top: 1px solid var(--rule); }
 .contact-row:hover .contact-val { color: var(--gold); }
 .contact-k {
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--ink3); min-width: 80px; font-weight: 500;
 }
 .contact-val {
-  font-family: var(--cool); font-size: 1rem; font-weight: 700;
+  font-family: var(--cool); font-size: 1rem; font-weight: 400;
   color: var(--ink2); transition: color 0.25s;
 }
 .contact-right {
@@ -376,7 +376,7 @@ section { padding: 8rem 5vw; }
 }
 .contact-right .heading { margin-bottom: 1rem; }
 .contact-right > p {
-  font-size: 14px; font-weight: 300; color: var(--ink2); line-height: 1.9; margin-bottom: 2.5rem;
+  font-size: 15px; font-weight: 300; color: var(--ink2); line-height: 1.9; margin-bottom: 2.5rem;
 }
 .contact-actions { display: flex; flex-direction: column; gap: 0.85rem; align-items: flex-start; }
 .wa-reveal {
@@ -416,7 +416,8 @@ footer {
   .tagline-strip { grid-template-columns: 1fr 1fr; }
   #about { grid-template-columns: 1fr; }
   .about-left { border-right: none; border-bottom: 1px solid var(--rule); }
-  .service-desc { display: none; }
+  .service-item { flex-wrap: wrap; gap: 1rem; }
+  .service-desc { display: block; font-size: 15px; text-align: left; max-width: 100%; flex-basis: 100%; }
   .skills-grid { grid-template-columns: 1fr; }
   #contact { grid-template-columns: 1fr; }
   .contact-left { border-right: none; border-bottom: 1px solid var(--rule); }
@@ -430,6 +431,72 @@ footer {
   .tagline-strip { grid-template-columns: 1fr; }
   .contact-actions { flex-direction: column; }
   .vsi-meta { flex-direction: column; gap: 0.5rem; }
+
+  /* ── Work rows: stack vertically on mobile ── */
+  .work-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.6rem 1.2rem;
+  }
+  .work-row-left { gap: 1rem; width: 100%; }
+  .work-row-right {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .work-num {
+    font-size: 14px;
+    padding-top: 0.1rem;
+    width: auto;
+  }
+  .work-title { font-size: 1.2rem; }
+  .work-desc { font-size: 12px; max-width: 100%; }
+  .work-list { border-radius: 0; }
+  .work-tag { font-size: 8px; }
+  .work-link-label { font-size: 10px; }
+
+  /* ── Tagline strip ── */
+  .tagline-item { padding: 1.5rem 5vw; }
+  .tagline-item-title { font-size: 14px; }
+  .tagline-item-desc { font-size: 13px; }
+
+  /* ── Services ── */
+  .service-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+  }
+  .service-item .service-n { width: auto; }
+  .service-title { font-size: 1.2rem; }
+  .service-desc {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  /* ── Portfolio header ── */
+  .portfolio-header { margin-bottom: 2rem; }
+  .portfolio-header-right { font-size: 13px; }
+
+  /* ── Instagram row ── */
+  .insta-row { padding: 1.5rem 1.2rem; gap: 1rem; }
+
+  /* ── Stats ── */
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 0; }
+  .stat-label { font-size: 11px; letter-spacing: 0.08em; }
+
+  /* ── Skill rows ── */
+  .skill-row { flex-direction: column; gap: 0.3rem; align-items: flex-start; }
+  .skill-vals { text-align: left; }
+
+  /* ── Contact ── */
+  .contact-k { min-width: 70px; font-size: 12px; }
+  .contact-val { font-size: 0.9rem; }
 }
 </style>
 </head>
@@ -632,6 +699,23 @@ footer {
       </div>
       <div class="work-row-right">
         <span class="work-tag">Social · Short-form</span>
+        <span class="work-link-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Watch on YouTube
+        </span>
+      </div>
+    </a>
+
+    <a href="https://youtube.com/shorts/pDciAwUF7R8?feature=share" target="_blank" class="work-row">
+      <div class="work-row-left">
+        <span class="work-num">04</span>
+        <div class="work-info">
+          <span class="work-title">Motion Graphics & VFX</span>
+          <span class="work-desc">Custom animations, kinetic typography, and compositing crafted in After Effects.</span>
+        </div>
+      </div>
+      <div class="work-row-right">
+        <span class="work-tag">Motion · VFX</span>
         <span class="work-link-label">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Watch on YouTube
